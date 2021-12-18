@@ -387,6 +387,10 @@ const listenToToggle = function () {
 		if (toggle.checked == true) {
 			// console.log('toggle checked')
 			toggle_checked = true;
+			toggle.disabled = true;
+			setTimeout(function () {
+			toggle.disabled = false;
+			}, 2000);
 			getDataConstructors(start_round, total_rounds);
 			for (const interval of document.querySelectorAll('.js-switcher')) {
 				if (interval.getAttribute("data-type") == "all") {
@@ -399,6 +403,11 @@ const listenToToggle = function () {
 		else {
 			// console.log('toggle unchecked')
 			toggle_checked = false;
+			toggle_checked = true;
+			toggle.disabled = true;
+			setTimeout(function () {
+				toggle.disabled = false;
+			}, 2000);
 			getDataDrivers(start_round, total_rounds);
 			for (const interval of document.querySelectorAll('.js-switcher')) {
 				if (interval.getAttribute("data-type") == "all") {
