@@ -1,0 +1,220 @@
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* colors */
+  --color-page-bg: white;
+  --color-page-text: black;
+
+  --color-title: #e10600;
+
+  --color-interval-switcher-bg: #e10600;
+  --color-interval-switcher-selected: white;
+  --color-interval-switcher-focus-shadow: 0 0 0 2px #15151e66;
+  
+  --color-toggle-unchecked-bg: #CCC;
+  --color-toggle-checked-bg: #e10600;
+  --color-toggle-slider: white;
+
+  /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    --global-whitespace-xs: calc(var(--global-baseline) * .5); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Work Sans", Helvetica, arial, sans-serif;
+  background-color: var(--color-page-bg);
+  color: var(--color-page-text);
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+/*
+    Component: title
+    ---
+    page/chart title
+*/
+.c-title {
+  display: flex;
+  color: var(--color-title);
+  margin: 0;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+/*
+    Component: toggle
+    ---
+    toggle between Drivers and Constructors
+*/
+.c-toggle {
+  display: flex;
+  margin-bottom: 16px;
+}
+.c-toggle__label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.c-toggle__label:first-child{ 
+  justify-content: right;
+  margin-right: auto; 
+}
+
+.c-toggle__label:last-child { 
+  justify-content: left;
+  margin-left: auto;  
+}
+
+.c-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 0px 8px;
+}
+
+.c-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.c-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-toggle-unchecked-bg);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.c-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--color-toggle-slider);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .c-slider {
+  background-color: var(--color-toggle-checked-bg);
+}
+
+input:focus + .c-slider {
+  box-shadow: 0 0 1px var(--color-toggle-checked-bg);
+}
+
+input:checked + .c-slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.c-slider {
+  border-radius: 34px;
+}
+
+.c-slider:before {
+  border-radius: 50%;
+}
+
+/*
+    Component: interval switcher
+    ---
+    switch interval
+*/
+.c-interval-switcher {
+    display: flex;
+    margin-top: 8px;
+    justify-content: center;
+}
+
+.c-interval-switcher__label {
+    padding: 0.25rem 1rem 0.25rem;
+}
+
+.c-interval-switcher__radio:checked + .c-interval-switcher__label {
+    background-color: var(--color-interval-switcher-bg);
+    color: var(--color-interval-switcher-selected);
+    border-radius: 2rem;
+}
+
+.c-interval-switcher__radio:focus + .c-interval-switcher__label {
+    box-shadow: var(--color-interval-switcher-focus-shadow);
+}
+
+/*
+    Component: chart
+    ---
+    chart class
+*/
+.c-chart {
+  height: 95vh;
+  width: 90vw;
+  margin: auto;
+}
+

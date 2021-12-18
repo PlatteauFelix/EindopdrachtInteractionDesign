@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="is-day">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>F1 driver standings 2021</title>
+        <meta name="description" content="An app about the the F1 driver standings.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#cce7ff">
+        <meta name="theme-color" content="#cce7ff">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f3557">
+
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/screen.css">
+
+        
+    </head>
+    <body>
+
+        <div class="c-title">
+            <h1 class="js-title">F1 driver standings 2021</h1>
+        </div>
+
+        <div class="c-toggle">
+            <label class="c-toggle__label" for="switch">Drivers</label>
+            <label class="c-switch">
+                <input class="js-toggle" id="switch" type="checkbox">
+                <span class="c-slider"></span>
+            </label>
+            <label class="c-toggle__label" for="switch">Constructors</label>
+        </div>
+
+        <div>
+            <ul class="o-list c-interval-switcher">
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="first" data-value="15" type="radio" name="interval-switch" id="first 15">
+                    <label class="c-interval-switcher__label" for="first 15">first 15</label>
+                </li>
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="first" data-value="10" type="radio" name="interval-switch" id="first 10">
+                    <label class="c-interval-switcher__label" for="first 10">first 10</label>
+                </li>
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="first" data-value="5" type="radio" name="interval-switch" id="first 5">
+                    <label class="c-interval-switcher__label" for="first 5">first 5</label>
+                </li>            
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="all" type="radio" name="interval-switch" id="all" checked>
+                    <label class="c-interval-switcher__label" for="all">all</label>
+                </li>
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="last" data-value="5" type="radio" name="interval-switch" id="last 5">
+                    <label class="c-interval-switcher__label" for="last 5">last 5</label>
+                </li>                
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="last" data-value="10" type="radio" name="interval-switch" id="last 10">
+                    <label class="c-interval-switcher__label" for="last 10">last 10</label>
+                </li>
+                <li class="c-interval-switcher__item">
+                    <input class="o-hide-accessible c-interval-switcher__radio js-switcher" data-type="last" data-value="15" type="radio" name="interval-switch" id="last 15">
+                    <label class="c-interval-switcher__label" for="last 15">last 15</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="c-chart">
+            <canvas id="myChart"></canvas>
+        </div>
+
+	</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js"></script>
+    <script src="./script/lodash.js"></script>
+    <script src="./script/app.js"></script>
+</html>
