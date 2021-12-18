@@ -387,24 +387,24 @@ const listenToToggle = function () {
 		if (toggle.checked == true) {
 			// console.log('toggle checked')
 			toggle_checked = true;
+			getDataConstructors(start_round, total_rounds);
 			for (const interval of document.querySelectorAll('.js-switcher')) {
 				if (interval.getAttribute("data-type") == "all") {
 					// console.log('reset to all')
 					interval.checked = true;
 					document.querySelector('.js-title').innerHTML = "F1 constructor standings 2021"
-					getDataConstructors(start_round, total_rounds);
 				}
 			}
 		}
 		else {
 			// console.log('toggle unchecked')
 			toggle_checked = false;
+			getDataDrivers(start_round, total_rounds);
 			for (const interval of document.querySelectorAll('.js-switcher')) {
 				if (interval.getAttribute("data-type") == "all") {
 					// console.log('reset to all')
 					interval.checked = true;
 					document.querySelector('.js-title').innerHTML = "F1 driver standings 2021"
-					getDataDrivers(start_round, total_rounds);
 				}
 			}
 		}
