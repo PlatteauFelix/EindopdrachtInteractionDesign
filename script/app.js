@@ -313,7 +313,7 @@ let getDataDrivers = async (min, max) => {
 	var result = [];
 
 	for (let i = min; i < max + 1; i++) {
-		const ENDPOINT = `http://ergast.com/api/f1/2021/${i}/driverStandings.json`;
+		const ENDPOINT = `https://ergast.com/api/f1/2021/${i}/driverStandings.json`;
 		const request = await fetch(`${ENDPOINT}`);
 		const json = await request.json();
 		const data = json["MRData"]["StandingsTable"]["StandingsLists"][0]
@@ -331,7 +331,7 @@ let getDataConstructors = async (min, max) => {
 	var result = [];
 
 	for (let i = min; i < max + 1; i++) {
-		const ENDPOINT = `http://ergast.com/api/f1/2021/${i}/constructorStandings.json`;
+		const ENDPOINT = `https://ergast.com/api/f1/2021/${i}/constructorStandings.json`;
 		const request = await fetch(`${ENDPOINT}`);
 		const json = await request.json();
 		const data = json["MRData"]["StandingsTable"]["StandingsLists"][0]
