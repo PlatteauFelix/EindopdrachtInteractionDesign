@@ -346,6 +346,9 @@ let getDataConstructors = async (min, max) => {
 	showChartConstructors(result);
 };
 
+
+
+
 const listenToSwitcher = function () {
 	for (const interval of document.querySelectorAll('.js-switcher')) {
 		interval.addEventListener('click', function () {
@@ -397,6 +400,7 @@ const listenToToggle = function () {
 					// console.log('reset to all')
 					interval.checked = true;
 					document.querySelector('.js-title').innerHTML = "F1 constructor standings 2021"
+					document.title = "F1 constructor standings 2021";
 				}
 			}
 		}
@@ -414,6 +418,7 @@ const listenToToggle = function () {
 					// console.log('reset to all')
 					interval.checked = true;
 					document.querySelector('.js-title').innerHTML = "F1 driver standings 2021"
+					document.title = "F1 driver standings 2021";
 				}
 			}
 		}
